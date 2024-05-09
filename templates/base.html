@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minion Translator</title>
+</head>
+<body>
+    <h2>Translate</h2>
+    <form id="translation_form" action="" method="post">
+        {% csrf_token %}
+        <label for="input-text">Input text: </label><br>
+        <textarea id="input-text" name="input-text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Translate</button>
+    </form>
+    <div id="translated-text">
+        {% if translated_text %}
+            Translated text: {{ translated_text }}
+        {% endif %}
+    </div>
+</body>
+</html>
